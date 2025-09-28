@@ -1,0 +1,144 @@
+/* --- General Styling --- */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2980b9;
+    --light-gray: #f4f7f9;
+    --medium-gray: #ecf0f1;
+    --dark-gray: #333;
+    --text-color: #2c3e50;
+    --danger-color: #e74c3c;
+    --card-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+    margin: 0;
+    line-height: 1.6;
+}
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+h1, h2, h3, h4 {
+    color: var(--text-color);
+}
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: var(--secondary-color);
+}
+.button-secondary { background-color: #95a5a6; }
+.button-secondary:hover { background-color: #7f8c8d; }
+.button-danger { background-color: var(--danger-color); }
+.button-danger:hover { background-color: #c0392b; }
+
+/* --- Header --- */
+header {
+    background-color: #ffffff;
+    padding: 15px 30px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+/* --- Modal Styling --- */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    z-index: 2000; /* High z-index to cover everything */
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 5% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+}
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 20px;
+    cursor: pointer;
+}
+.close-btn:hover,
+.close-btn:focus {
+    color: var(--danger-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+#modalExerciseList {
+    list-style: disc;
+    padding-left: 20px;
+}
+#modalExerciseList li {
+    padding: 5px 0;
+    border-bottom: 1px dotted #eee;
+}
+header h1 { margin: 0; font-size: 1.8em; }
+header nav a { margin: 0 15px; text-decoration: none; color: var(--primary-color); font-weight: 500; }
+
+/* --- Main Content Sections --- */
+.main-content { display: grid; grid-template-columns: 1fr; gap: 30px; }
+
+/* --- Calendar Section --- */
+.calendar-section { background-color: #fff; padding: 25px; border-radius: 8px; box-shadow: var(--card-shadow); }
+.calendar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.calendar-header h2 { text-align: center; }
+.calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; }
+.calendar-day { border: 1px solid #e0e0e0; border-radius: 5px; padding: 10px; min-height: 150px; background-color: #fdfdfd; }
+.calendar-day.drag-over { background-color: #eaf5ff; border-style: dashed; }
+.calendar-day h3 { margin: 0 0 10px 0; font-size: 1em; text-align: center; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+.workout-item { background-color: var(--medium-gray); padding: 8px; border-radius: 4px; font-size: 0.9em; margin-bottom: 5px; cursor: grab; border-left: 3px solid var(--primary-color); display: flex; align-items: center; justify-content : space-between;}
+.rest-day { color: #7f8c8d; text-align: center; padding-top: 30px; font-style: italic; }
+
+/* --- Workout Lists Section --- */
+.workout-lists-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+.workout-list-card { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: var(--card-shadow); }
+.workout-list-card h3 { margin-top: 0; }
+.workout-list-card ul { list-style-type: none; padding: 0; }
+.workout-list-card li { padding: 8px 5px; border-bottom: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: center; }
+.workout-list-card .actions { margin-top: 15px; display: flex; gap: 10px; }
+.add-exercise-form { margin-top: 15px; display: flex; gap: 10px; }
+.add-exercise-form input { flex-grow: 1; padding: 8px; border: 1px solid #ddd; border-radius: 4px; }
+.remove-exercise-btn { background: none; border: none; color: var(--danger-color); cursor: pointer; font-size: 1.2em; }
+
+/* --- Presets Section --- */
+.preset-card { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: var(--card-shadow); margin-bottom: 15px; }
+.preset-card h4 { margin: 0 0 10px 0; }
+.preset-card details > div { padding: 10px; background-color: #f8f9fa; border-radius: 5px; margin-top: 10px; }
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 768px) {
+    .calendar-grid { grid-template-columns: repeat(2, 1fr); }
+    header { flex-direction: column; gap: 10px; }
+}
+@media (max-width: 480px) {
+    .calendar-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fit-U - Your Personal Workout Planner</title>
+    <link rel="stylesheet" href="./workoutPlanner/style.css">
+</head>
+<body>
+<div id="workoutModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3 id="modalWorkoutTitle"></h3>
+            <ul id="modalExerciseList">
+                </ul>
+        </div>
+    </div>
+    <header>
+        <h1>Fit-U</h1>
+        <nav>
+            <a href="#calendar-section">Calendar</a>
+            <a href="#my-workouts-section">My Workouts</a>
+            <a href="#presets-section">Presets</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main class="main-content">
+            <section id="calendar-section" class="calendar-section">
+                <div class="calendar-header">
+                    <button id="prev-week">&lt; Previous</button>
+                    <h2 id="calendar-title">This Week's Plan</h2>
+                    <button id="next-week">Next &gt;</button>
+                </div>
+                <div class="calendar-grid" id="calendar-grid">
+                    </div>
+            </section>
+
+            <section id="my-workouts-section">
+                <h2>My Custom Workout Lists</h2>
+                <button id="create-new-list">Create New List</button>
+                <br><br>
+                <div class="workout-lists-container" id="workout-lists-container">
+                    </div>
+            </section>
+
+            <section id="presets-section">
+                <h2>Preset Workout Plans</h2>
+                <div class="preset-card">
+                    <h4>Beginner: Full Body Strength</h4>
+                    <p>A great starting point to build foundational strength across your entire body.</p>
+                    <details>
+                        <summary>View Workouts</summary>
+                        <div class="preset-data">
+                            <strong>Tuesday Workout A:</strong> Squats (3x10), Push-ups (3xto failure), Rows (3x10), Plank (3x30s hold)<br>
+                            <strong>Thrusday Workout B:</strong> Deadlifts (3x8), Overhead Press (3x10), Pull-ups (assisted, 3x8), Leg Raises (3x15)
+                        </div>
+                    </details><br>
+                    <button class="use-preset-btn">Use This Plan</button>
+                </div>
+                <div class="preset-card">
+                    <h4>Intermediate: Upper/Lower Split</h4>
+                    <p>Splits the body into upper and lower body days for more volume and focus.</p>
+                    <details>
+                        <summary>View Workouts</summary>
+                        <div class="preset-data">
+                           <strong>Monday Upper Body A:</strong> Bench Press (4x8), Barbell Rows (4x8), Lateral Raises (3x12), Bicep Curls (3x10), Tricep Extensions (3x10)<br>
+                           <strong>Tuesday Lower Body A:</strong> Squats (4x8), Leg Curls (3x12), Leg Extensions (3x12), Calf Raises (4x15)<br>
+                           <strong>Thrusday Upper Body B:</strong> Pull-ups (4xto failure), Incline Press (4x10), Cable Rows (3x12), Face Pulls (3x15)<br>
+                           <strong>Friday Lower Body B:</strong> Romanian Deadlifts (4x10), Leg Press (4x12), Lunges (3x10 per leg), Seated Calf Raises (4x20)
+                        </div>
+                    </details><br>
+                    <button class="use-preset-btn">Use This Plan</button>
+                </div>
+                <div class="preset-card">
+                    <h4>Weightless Exercise</h4>
+                    <p>Exercises you can complete without dumbells or weights.</p>
+                    <details>
+                        <summary>View Workouts</summary>
+                        <div class="preset-data">
+                           <strong>Monday Upper Body A:</strong> Push-ups (3xto failure), Pike Push-ups (3xto failure), Chin-up (3x10)<br>
+                           <strong>Tuesday Upper Body B:</strong> Pull-ups (3xto failure), Sit ups (3x10), Butterfly kicks (3x30s) or Leg Raise (3x10), Plank (3x30s hold)<br>
+                           <strong>Friday Lower Body:</strong> Squats (3xto failure), Mt Climbers (3x10 per side), Lunges (3x10 per side), Calf Raises (3x10 per sides)<br>
+                        </div>
+                    </details><br>
+                    <button class="use-preset-btn">Use This Plan</button>
+                </div>
+            </section>
+
+            <section>
+                <h2>Additional Resource</h2>
+                <a href="https://musclewiki.com" target="_blank">MuscleWiki</a>
+                <p>Thousands of different excerises ranging from bodyweight excersise to weight machine workout</p>
+                <a href="https://darebee.com/workout.html" target="_blank">DAREBEE</a>
+                <p>Thousands of bodyweight exercises, no weights needed, just you</p>
+            </section>
+        </main>
+    </div>
+
+<script src = "./workoutPlanner/code.js"></script>
+
+</body>
+</html>
